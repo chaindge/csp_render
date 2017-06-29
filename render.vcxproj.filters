@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="raster">
+      <UniqueIdentifier>{983e31c3-2b14-4523-909e-42f69ccd3350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{176c2ce9-86f1-49e5-a9b4-ccaada033b34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Console">
+      <UniqueIdentifier>{67ad54f5-9e15-4125-8eaa-7cd6e3f9d0e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="timer">
+      <UniqueIdentifier>{da96f606-0229-43ad-9833-826e543cb80d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="raster\csp_raster.cpp">
+      <Filter>raster</Filter>
+    </ClCompile>
+    <ClCompile Include="math\csp_math..cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="raster\csp_device.cpp">
+      <Filter>raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Console\IConsole.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Console\ConsoleWinImpl.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Console\ConsoleFactory.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Console\ConsoleSingleton.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="timer\SimpleRandomizer.cpp">
+      <Filter>timer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="raster\csp_raster.h">
+      <Filter>raster</Filter>
+    </ClInclude>
+    <ClInclude Include="math\csp_math.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="wnd.h" />
+    <ClInclude Include="raster\csp_device.h">
+      <Filter>raster</Filter>
+    </ClInclude>
+    <ClInclude Include="raster\csp_buffer.h">
+      <Filter>raster</Filter>
+    </ClInclude>
+    <ClInclude Include="raster\csp_primitive.h">
+      <Filter>raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Console\IConsole.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Console\ConsoleWinImpl.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Console\ConsoleFactory.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="mtp_container.h" />
+    <ClInclude Include="Console\ConsoleSingleton.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="timer\Regulator.h">
+      <Filter>timer</Filter>
+    </ClInclude>
+    <ClInclude Include="timer\SimpleRandomizer.h">
+      <Filter>timer</Filter>
+    </ClInclude>
+    <ClInclude Include="timer\SimpleTimer.h">
+      <Filter>timer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
