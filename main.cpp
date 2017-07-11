@@ -42,7 +42,6 @@ void offset(vector_4d* v, float x, float y)
 // 	csp_raster_vertex v1, v2, v3, v4, v5, v6;
 // 	color_4f toy_color = { 1.f,0.5f,0.31f,0.5f };
 // 	
-// 	
 // 	float alpha = 0.8f;
 // 
 // 	v1._vertex.x = 0;
