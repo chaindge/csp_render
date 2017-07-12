@@ -36,3 +36,5 @@ Release
 
 *.db
 *.opendb
+*.suo
+/Debug.txt

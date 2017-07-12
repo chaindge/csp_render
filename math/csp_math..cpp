@@ -11,26 +11,26 @@ float interp(float x1, float x2, float t)
 inline float fast_mul(float f1, float f2)
 {
 	float ret = 0.f;
-	__asm
-	{
-		fld	f1
-		fld	f2
-		fmul
-		fst ret
-	}
+// 	__asm
+// 	{
+// 		fld	f1
+// 		fld	f2
+// 		fmul
+// 		fst ret
+// 	}
 	return ret;
 }
 
 inline float fast_div(float f1, float f2)
 {
 	float ret = 0.f;
-	__asm
-	{
-		fld	f1
-		fld	f2
-		fdiv
-		fst ret
-	}
+// 	__asm
+// 	{
+// 		fld	f1
+// 		fld	f2
+// 		fdiv
+// 		fst ret
+// 	}
 	return ret;
 }
 

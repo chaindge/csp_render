@@ -1,115 +1,30 @@
-#include <iostream>
-
 #include "raster/csp_device.h"
-#include "SOIL.h"
-
-#pragma comment (lib, "opengl32.lib")
-#pragma comment (lib, "SOIL.lib")
-
 #include <time.h>
 #include "wnd.h"
-
 #include "Console/ConsoleSingleton.h"
-
 #include "timer/SimpleTimer.h"
 
-void save_file(csp_device* dc, const std::string& path)
-{
-	auto fb = dc->get_frame_buffer();
+// #include "SOIL.h" 
+// #pragma comment (lib, "opengl32.lib")
+// #pragma comment (lib, "SOIL.lib")
 
-	int chanels = fb->get_color_bits() >> 3;
-	int width = fb->get_width();
-	int height = fb->get_height();
-
-	unsigned char* buffer = (unsigned char*)fb->get_color_buffer_data();
-	SOIL_save_image(path.c_str(), SOIL_SAVE_TYPE_BMP, width, height, chanels, buffer);
-}
+// void save_file(csp_device* dc, const std::string& path)
+// {
+// 	auto fb = dc->get_frame_buffer();
+// 
+// 	int chanels = fb->get_color_bits() >> 3;
+// 	int width = fb->get_width();
+// 	int height = fb->get_height();
+// 
+// 	unsigned char* buffer = (unsigned char*)fb->get_color_buffer_data();
+// 	SOIL_save_image(path.c_str(), SOIL_SAVE_TYPE_BMP, width, height, chanels, buffer);
+// }
 
 
 void bind_device(window* wnd, csp_device* dc)
 {
 	wnd->framebuffer = dc->get_frame_buffer()->get_color_buffer_data();
 }
-
-void offset(vector_4d* v, float x, float y)
-{
-	v->x += x;
-	v->y += y;
-}
-
-// void draw(csp_device* dc )
-// {
-// 	csp_raster_vertex v1, v2, v3, v4, v5, v6;
-// 	color_4f toy_color = { 1.f,0.5f,0.31f,0.5f };
-// 	
-// 	
-// 	float alpha = 0.8f;
-// 
-// 	v1._vertex.x = 0;
-// 	v1._vertex.y = 0;
-// 	v1._vertex.z = 1;
-// 	v1._vertex.w = 1;
-// 	v1._color = { 1.0f,0.f,0.f,alpha };
-// 
-// 	v2._vertex.x = 800;
-// 	v2._vertex.y = 600;
-// 	v2._vertex.z = 1;
-// 	v2._vertex.w = 1;
-// 	v2._color = { 0.0f,1.f,0.f,alpha };
-// 
-// 	v3._vertex.x = 12;
-// 	v3._vertex.y = 500;
-// 	v3._vertex.z = 1;
-// 	v3._vertex.w = 1;
-// 	v3._color = { 0.f,0.f,1.f,alpha };
-// 
-// 	v4._vertex.x = 100;
-// 	v4._vertex.y = 300;
-// 	v4._vertex.z = 1;
-// 	v4._vertex.w = 1;
-// 	v4._color = toy_color;
-// 
-// 	v5._vertex.x = 300;
-// 	v5._vertex.y = 100;
-// 	v5._vertex.z = 1;
-// 	v5._vertex.w = 1;
-// 	v5._color = toy_color;
-// 
-// 	v6._vertex.x = 100;
-// 	v6._vertex.y = 100;
-// 	v6._vertex.z = 1;
-// 	v6._vertex.w = 1;
-// 	v6._color = toy_color;
-// 
-// 	
-// 	int d_width = 800, d_height = 600;
-// 
-// 	dc->clear_buffer();
-// 
-// // 	for (int i = 0; i < 1; ++i)
-// // 	{
-// // 		v1._vertex.x = rand() % (d_width - 1);
-// // 		v1._vertex.y = rand() % (d_height - 1);
-// // 		v2._vertex.x = rand() % (d_width - 1);
-// // 		v2._vertex.y = rand() % (d_height - 1);
-// // 		v3._vertex.x = rand() % (d_width - 1);
-// // 		v3._vertex.y = rand() % (d_height - 1);
-// // 
-// // 		dc->triangle(&v1, &v2, &v3, csp_use_color);
-// // 	}
-// 
-// 	dc->triangle(&v1, &v2, &v3, csp_use_color,true);
-// 
-// // 	for (int i = 0; i < 10; i++)
-// // 	{
-// // 		dc->triangle(&v5, &v4, &v6, csp_use_color);
-// // 		offset(&v4._vertex, 40, 20);
-// // 		offset(&v5._vertex, 40, 20);
-// // 		offset(&v6._vertex, 40, 20);
-// // 	}
-// 
-// 	save_file(dc, "triangle.png");
-// }
 
 void draw(csp_device* dc)
 {
@@ -219,13 +134,13 @@ int main()
 		{
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
+
 		}
 		else
 		{
 			if (_SimpleTimer->ready_for_next_update())
 			{
 				auto dt = _SimpleTimer->time_elapsed();
-				//debug_con << "dt=" << dt << "s" << "";
 
 				eye_angle += dt * 1.5;
 				if (eye_angle > MATH_PI * 2)
@@ -283,7 +198,7 @@ int main()
 		}
 	}
 
-	save_file(&dc, "triangle.png");
+	//save_file(&dc, "triangle.png");
 
 	close_window(wnd);
 	dc.free_device();
